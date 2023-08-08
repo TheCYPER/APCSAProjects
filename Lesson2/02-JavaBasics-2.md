@@ -18,8 +18,40 @@
 反正先看个Demo   
 `Demo01.java`
 ```java
-public class 
+public class Demo01{
+    public static void main(String[] args) {
+        // 声明整数变量，并赋值
+        int num1 = 10;
+        // 声明一个变量需要三个部分
+        // 变量类型 变量名 = 值;
+        // int num = 10
+
+        // 声明浮点数变量，并赋值
+        double num2 = 3.14;
+
+        // 声明布尔型变量，并赋值
+        boolean flag = true;
+
+        // 进行简单的运算和使用
+        int result = num1 * 5;
+        double piValue = num2 * 2.0;
+
+        // 输出结果
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+        System.out.println("flag: " + flag);
+        System.out.println("result: " + result);
+        System.out.println("piValue: " + piValue);
+    }
+}
 ```
+1. 在AP CSA考试中 我们只会使用这三种基本数据类型:
+2. int: An integer. For example, 2,-26, 3000 
+3. boolean: A boolean. Just two values, true or false 
+4. double: A double precision floating-point number. For example, 2.718,-367189.41, 1.6e4
+
+### 那么如果出现`int num = 3.14`会怎么样呢？
+
 
 
 ## Java Identifiers
@@ -30,16 +62,19 @@ public class
     这里的`xxx`就是它的名字
 4. 所以这些东西都有名字
 5. Thus, Java 所有的组成部分都需要名字
-6. **类名**、**变量名**以及**方法名**都被称为**标识符(Identifiers)**.  
+6. **类名**、**变量名**以及**方法名**都被称为**标识符(Identifiers)**
+
 **Rules! Important!**
+- what are valid:
 1. 开头：A-Z 或者 a-z 美元符$ 或者下划线_
       不可以数字开头！！！
 2. 首字母后可以是任何字母 数字 美元符 下划线
 
-1. 关键字(Java内置key word)不能用作标识符
+- what has to avoid:
+1. 关键字(Java内置的key word)不能用作标识符
 2. 标识符是大小写敏感的
      - 所以Num 和 num是不一样的
-3. 一个.java中只能有一个(返回为空, 参数为String args[])main函数
+3. 一个.java中只能有一个(返回为空, 参数为String args[])的`main`函数
     要不然Java就不知道跑哪个了
    
 `合法标识符举例：age、$salary、_value、__1_value`

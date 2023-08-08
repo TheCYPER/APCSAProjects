@@ -51,6 +51,42 @@ public class Demo01{
 4. double: A double precision floating-point number. For example, 2.718,-367189.41, 1.6e4
 
 ### 那么如果出现`int num = 3.14`会怎么样呢？
+### try it yourself!
+`Demo02.java`
+```java
+public class Demo02 {
+    public static void main(String[] args) {
+        double num1 = 3.14;
+        int num2 = num1; // what will be happening here
+
+        System.out.println("num2 (int): " + num2);
+    }
+}
+
+```
+1. `"Incompatible types. Found: 'double', required: 'int':6"`
+2. 出现了报错！这是因为 int在内存中的地方一共就那么大 放不下double这样的小数
+但是如果是给double int值呢？
+`Demo02.java`
+```java
+public class Demo02 {
+    public static void main(String[] args) {
+//        double num1 = 3.14;
+//        int num2 = num1; // 报错! 不容许将double值赋给int类型的变量
+//
+//        System.out.println("num2 (int): " + num2);
+
+        double num3 = 10; // !允许将int值赋给double类型的变量!
+        System.out.println("num3 (double): " + num3);  // 输出是10.0
+    }
+}
+```
+1. 输出为10.0
+2. 这是因为在内存中给double的空间比int大
+3. 另外Java自动帮你把它转化成了一个double: 10.0
+
+- 那么我们如何才可以给int一个double值呢？
+`Demo02.java`
 
 
 
@@ -67,19 +103,29 @@ public class Demo01{
 **Rules! Important!**
 - what are valid:
 1. 开头：A-Z 或者 a-z 美元符$ 或者下划线_
-      不可以数字开头！！！
 2. 首字母后可以是任何字母 数字 美元符 下划线
 
-- what has to avoid:
-1. 关键字(Java内置的key word)不能用作标识符
-2. 标识符是大小写敏感的
+- what has to be avoided:
+1. 关键字(Java内置的key word)不能用作标识符 
+2. 不可以数字开头！！！
+3. 标识符是大小写敏感的
      - 所以Num 和 num是不一样的
-3. 一个.java中只能有一个(返回为空, 参数为String args[])的`main`函数
+4. 一个`.java`中只能有一个(返回为空, 参数为String args[])的`main`函数
     要不然Java就不知道跑哪个了
+5. 不能有空格
    
 `合法标识符举例：age、$salary、_value、__1_value`
 `非法标识符举例：123abc、-salary`
 
+- 但是只合法还不够，我们还需要一些大家都看着舒服的约定俗成的命名法
+- 大驼峰命名法：用于类名
+- 单词的首字母都大写，没有使用下划线或其他分隔符来连接单词
+- `MobilePhone`
+  `CustomerOrder`
+  `BankAccount`
+  `Demo01`
+  `CSADemo01`
+- 小驼峰命名法：用于函数名和变量
 
 ## Java Keywords
 - An overview of Java keywords and their significance in the language.

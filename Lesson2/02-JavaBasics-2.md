@@ -136,6 +136,28 @@ public class Demo03 {
 ### Java Constant
 1. 在Java中我们会使用`final`关键字表示常量
 2. 被标记为`final`的变量不可以再次被赋值
+`Demo04.java`
+```java
+public class Demo04 {
+    public static void main(String[] args) {
+        // 定义一个常量，并赋值
+        final int MAX_VALUE = 100;
+
+        // 试图修改常量的值会导致编译错误
+        // MAX_VALUE = 200; // 会报错，常量不可再次赋值
+
+        // 常量的命名约定是大写字母
+        final double PI = 3.14159;
+
+        System.out.println("MAX_VALUE: " + MAX_VALUE);
+        System.out.println("PI: " + PI);
+
+        // 常量常用于数组的大小
+        int[] array = new int[MAX_VALUE];
+        // 或者其他一些固定值的场景
+    }
+}
+```
 
 ## Java Identifiers
 - Explanation of Java identifiers, naming conventions, and rules for naming variables, classes, etc.
@@ -154,16 +176,17 @@ public class Demo03 {
 
 - what has to be avoided:
 1. 关键字(Java内置的key word)不能用作标识符 
-2. 不可以数字开头！！！
+2. **不可以**数字开头！！！
 3. 标识符是大小写敏感的
      - 所以Num 和 num是不一样的
 4. 一个`.java`中只能有一个(返回为空, 参数为String args[])的`main`函数
     要不然Java就不知道跑哪个了
 5. 不能有空格
    
-`合法标识符举例：age、$salary、_value、__1_value`
-`非法标识符举例：123abc、-salary`
+- `合法标识符举例：age、$salary、_value、__1_value`
+- `非法标识符举例：123abc、-salary`
 
+### 命名规范(rules you **should be** following)
 - 但是只合法还不够，我们还需要一些大家都看着舒服的约定俗成的命名法
 - 大驼峰命名法：用于类名
 - 单词的首字母都大写
@@ -183,3 +206,54 @@ public class Demo03 {
 
 ## Java Keywords
 - An overview of Java keywords and their significance in the language.
+- Java中有多个关键字用于特定的任务和功能。以下是这些关键字的列表，按照不同的类别进行分组
+- 注意你 **不可以!!** 用Keyword来命名任何东西
+- 这个列表只是让你稍微看一下 知道Java有**关键字**这个东西就行了
+### 类别 1 - 修饰符和访问控制
+1. [ ] public：表示成员（变量、方法等）是公共的，可以在其他类中访问。
+2. [ ] protected：表示成员只能在同一包或子类中访问。
+3. [ ] private：表示成员只能在当前类中访问。
+4. [ ] static：表示成员属于类本身而不是实例。
+5. [ ] final：表示成员是不可更改的常量。
+6. [ ] abstract：表示类或方法是抽象的，不能被实例化。 
+### 类别 2 - 类、对象和继承
+1. [ ] class：定义一个类。
+2. [ ] interface：定义一个接口。
+3. [ ] extends：在类声明中表示继承一个类。
+4. [ ] implements：在类声明中表示实现一个接口。
+5. [ ] this：表示当前实例对象。
+6. [ ] super：表示父类实例对象。
+7. [ ] new：创建一个新的对象。 
+### 类别 3 - 控制流和异常处理
+1. [ ] if：条件语句，用于执行不同的代码块。
+2. [ ] else：与if一起使用，表示条件不成立时执行的代码块。
+3. [ ] switch：多分支条件语句，用于匹配不同的情况。
+4. [ ] case：在switch中表示一个分支情况。
+5. [ ] default：在switch中表示默认情况。
+6. [ ] for：循环语句，用于重复执行一段代码。
+7. [ ] while：循环语句，用于在条件满足时重复执行一段代码。
+8. [ ] do：循环语句，先执行一次代码，然后在条件满足时重复执行。
+9. [ ] break：在循环或开关语句中停止执行。
+10. [ ] continue：在循环中跳过当前迭代，继续下一次迭代。
+11. [ ] return：从方法中返回一个值。 
+### 类别 4 - 数据类型和变量
+1. [ ] int：表示整数数据类型。
+2. [ ] double：表示双精度浮点数数据类型。
+3. [ ] boolean：表示布尔数据类型。
+4. [ ] char：表示字符数据类型。
+5. [ ] String：表示字符串数据类型。
+6. [ ] void：表示方法不返回任何值。
+7. [ ] null：表示一个空引用。 
+### 类别 5 - 异常处理
+1. [ ] try：用于包围可能会引发异常的代码块。
+2. [ ] catch：在try块中用于捕获并处理异常。
+3. [ ] finally：无论是否引发异常，都会执行的代码块。
+4. [ ] throw：用于在代码中抛出异常。
+5. [ ] throws：在方法声明中指定可能抛出的异常。 
+### 类别 6 - 其他
+1. [ ] import：引入其他包中的类。
+2. [ ] package：定义包，用于组织类。
+3. [ ] native：表示使用本地方法。
+4. [ ] strictfp：定义精确浮点计算。
+### 共53个
+- 这次课程后你就会知道大部分的关键字是干什么的了

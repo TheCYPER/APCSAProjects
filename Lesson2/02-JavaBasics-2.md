@@ -85,10 +85,27 @@ public class Demo02 {
 2. 这是因为在内存中给double的空间比int大
 3. 另外Java自动帮你把它转化成了一个double: 10.0
 
-- 那么我们如何才可以给int一个double值呢？
+- 那么我们如何才可以给int一个double值呢
 `Demo02.java`
+```java
+public class Demo02 {
+    public static void main(String[] args) {
+//        double num1 = 3.14;
+//        int num2 = num1; // 报错! 不容许将double值赋给int类型的变量
+//
+//        System.out.println("num2 (int): " + num2);
 
+        double num3 = 10; // !允许将int值赋给double类型的变量!
+        System.out.println("num3 (double): " + num3);  // 输出是10.0
 
+        // 给int一个double值
+        double num4 = 7.8;
+        int num5 = (int) Math.round(num4); // 将double类型的num4转换为int类型，使用Math.round进行四舍五入
+        System.out.println("num5 (int): " + num5);
+    }
+}
+```
+1. 在这段样例中，
 
 ## Java Identifiers
 - Explanation of Java identifiers, naming conventions, and rules for naming variables, classes, etc.

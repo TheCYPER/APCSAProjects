@@ -6,11 +6,12 @@
 - CSA很爱考一些这里面的内容
 - 所有**好好试试**每一个Demo 确保你可以理解这里面的知识的
 
+### Basic things
 1. 变量就是内存里的一个部分的内容
      - 比如 int 整数, double 浮点数(就是小数的意识)
 2. 当创建变量的时候，需要在内存中申请一块空间
-3. 根据变量的类型为变量分配存储空间   
-**Thus,**分配的空间只能用来储存该类型数据(后面会提)
+3. 根据**变量的类型**为变量分配存储空间 
+   - **Thus,** 分配的空间只能用来储存该类型数据(后面会提)
 4. 通过定义不同类型的变量，可以在内存中储存整数、小数或者字符
 5. Java 的两大数据类型:
 	- 内置数据类型(马上要讲)
@@ -21,10 +22,14 @@
 public class Demo01{
     public static void main(String[] args) {
         // 声明整数变量，并赋值
-        int num1 = 10;
+        int num = 10;
         // 声明一个变量需要三个部分
         // 变量类型 变量名 = 值;
         // int num = 10
+        
+        // 声明整数变量，后赋值
+        int num1;
+        num1 = 20;
 
         // 声明浮点数变量，并赋值
         double num2 = 3.14;
@@ -37,6 +42,7 @@ public class Demo01{
         double piValue = num2 * 2.0;
 
         // 输出结果
+        System.out.println("num:" + num);
         System.out.println("num1: " + num1);
         System.out.println("num2: " + num2);
         System.out.println("flag: " + flag);
@@ -66,7 +72,7 @@ public class Demo02 {
 ```
 1. `"Incompatible types. Found: 'double', required: 'int':6"`
 2. 出现了报错！这是因为 int在内存中的地方一共就那么大 放不下double这样的小数
-但是如果是给double int值呢？
+- 但是如果是给double一个int值呢？
 `Demo02.java`
 ```java
 public class Demo02 {
@@ -74,7 +80,7 @@ public class Demo02 {
 //        double num1 = 3.14;
 //        int num2 = num1; // 报错! 不容许将double值赋给int类型的变量
 //
-//        System.out.println("num2 (int): " + num2);
+//        System.out.println("num2: " + num2);
 
         double num3 = 10; // !允许将int值赋给double类型的变量!
         System.out.println("num3 (double): " + num3);  // 输出是10.0
@@ -83,7 +89,8 @@ public class Demo02 {
 ```
 1. 输出为10.0
 2. 这是因为在内存中给double的空间比int大
-3. 另外Java自动帮你把它转化成了一个double: 10.0
+3. 另外Java**自动**帮你把它转化成了一个double: 10.0
+4. 通过自动帮你加了一个`.0`
 
 - 那么我们如何才可以给int一个double值呢
 `Demo02.java`
@@ -98,14 +105,37 @@ public class Demo02 {
         double num3 = 10; // !允许将int值赋给double类型的变量!
         System.out.println("num3 (double): " + num3);  // 输出是10.0
 
-        // 给int一个double值
+        // 给int一个double值 用强制类型转换的方式
         double num4 = 7.8;
-        int num5 = (int) Math.round(num4); // 将double类型的num4转换为int类型，使用Math.round进行四舍五入
-        System.out.println("num5 (int): " + num5);
+        int num5 = (int) num4; // 将double类型的num4转换为int类型
+        System.out.println("num5 (int): " + num5);  // num5 = 7
     }
 }
 ```
-1. 在这段样例中，
+1. 在这段样例中，我们使用`(int)`进行了强制类型转换
+2. 在Java中使用`(想转换成的类型)`进行类型转换
+3. 这种转换就是直接把**小数部分直接搞掉**
+- 如果我们想四舍五入呢(CSA考点注意)
+`Demo03.java`
+```java
+public class Demo03 {
+    public static void main(String[] args){
+        double posNum = 9.4;      // 正的小数
+        int roundNum1 = (int) (posNum + 0.5);  // 加五再截掉后面的
+        System.out.println(roundNum1);
+
+        double negNum = 9.4;      // 负的小数
+        int roundNum2 = (int) (negNum + 0.5);  // 减五再截掉后面的
+        System.out.println(roundNum2);
+    }
+}
+```
+1. 在直接记录下这两个方法前，希望你可以先思考一下为什么是这样的
+2. 方法：正数+0.5 取整；负数-0.5 取整
+
+### Java Constant
+1. 在Java中我们会使用`final`关键字表示常量
+2. 被标记为`final`的变量不可以再次被赋值
 
 ## Java Identifiers
 - Explanation of Java identifiers, naming conventions, and rules for naming variables, classes, etc.
@@ -136,13 +166,20 @@ public class Demo02 {
 
 - 但是只合法还不够，我们还需要一些大家都看着舒服的约定俗成的命名法
 - 大驼峰命名法：用于类名
-- 单词的首字母都大写，没有使用下划线或其他分隔符来连接单词
+- 单词的首字母都大写
 - `MobilePhone`
   `CustomerOrder`
   `BankAccount`
   `Demo01`
   `CSADemo01`
 - 小驼峰命名法：用于函数名和变量
+- 第一个单词首字母都大写
+- `personInfo`
+  `stuScore`
+  `indexForArr`
+  `bookTitle`
+  `numOfPos`
+
 
 ## Java Keywords
 - An overview of Java keywords and their significance in the language.

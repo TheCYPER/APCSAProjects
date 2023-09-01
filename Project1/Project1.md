@@ -15,11 +15,11 @@
 * Variables (**int**, **double**...)
 * Operates for calculation (`+-*/`)
 * Output (`System.out.println();`)
-* there are also things...
+* there are also other things...
 ### What do we need
 * Input: three variable refer to a, b, c
 * Process: calculation
-* Output: the two 
+* Output: the two solution
 ## Sample Answer
-- your solution could be totally different
+- your solution could be totally different but it's ok
 * 

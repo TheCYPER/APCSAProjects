@@ -17,7 +17,6 @@ public class Demo02 {
         } else {
             System.out.println("It's not raining. You can go out.");
         }
-
     }
 }
 

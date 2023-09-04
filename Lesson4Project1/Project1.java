@@ -1,4 +1,4 @@
-package APCSAGuides.Project1;
+package APCSAGuides.Lesson4Project1;
 
 public class Project1 {
     public static void main(String[] args){

@@ -106,7 +106,7 @@ while( 布尔表达式 ) {
 - 只要括号中的`布尔表达式`为 true，循环就会一直执行下去
 `Demo04.java`
 ```java
-public class Demo01 {
+public class Demo04 {
    public static void main(String[] args) {
       int x = 10;
       while( x < 20 ) {    // 只要x还是小于20的
@@ -163,5 +163,21 @@ for(int i = 0; i <= 10; i += 2){
 - 再次检测布尔表达式 `i <= 10`
 - 循环执行上面的过程 `执行循环体中的statements`
 
+`Demo05.java`
+```java
+public class Demo05 {
+    public static void main(String[] args) {
+        int cnt = 0;
+        for(int i = 0; i <= 10; i++){
+            cnt++;
+        }
+        System.out.println(cnt);
+    }
+}
+
+```
 ### break 语句
+- 如果我们在循环体中需要提前退出
+- 可以使用`break;`语句退出
+
 

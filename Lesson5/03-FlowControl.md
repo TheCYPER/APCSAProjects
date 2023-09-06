@@ -176,8 +176,53 @@ public class Demo05 {
 }
 
 ```
+
 ### break 语句
 - 如果我们在循环体中需要提前退出
 - 可以使用`break;`语句退出
+- `break`跳出最里层的循环，并且继续执行该循环下面的语句
+`Demo06.java`
+```java
+public class Demo06 {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        // 这个是一个数组 还没有学 但是是break语句最常用的情况
+        // 但是就和它的名字一样 是一个存了很多number的numbers变量
+        int target = 6;
 
+        System.out.println("Using break statement to exit a loop:");
 
+        for (int i = 0; i < numbers.length; i++) { // 挨个取出number
+            if (numbers[i] == target) {            // 如果在这个numbers中发现了target 就是6
+                break;                             // 就会退出循环
+            }
+        }
+    }
+}
+```
+- 此外我们也会发现
+- 只要将`while`循环加入一个`if`和`break`语句就变成了一个`for`循环
+- 建议你先想一下 写一次
+
+`Demo07.java`
+```java
+for(int i = 0; i <= 10; i++){
+    System.out.println(i);
+}
+int j = 0;
+while(j <= 10){
+    System.out.println(x);
+    x++;
+}
+int k = 0;
+while(){   
+    System.out.println(k);
+    if (k >= 10){
+        break;
+    }
+}
+```
+
+### continue 语句
+- `continue` 语句用来控制循环并跳过当前迭代（循环）中的一部分代码
+- 但是不是直接退出整个循环
